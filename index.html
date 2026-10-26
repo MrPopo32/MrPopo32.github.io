@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jude Browne</title>
+<meta name="description" content="Jude Browne: Data Science &amp; AI graduate (UCD, 2026) in Dublin. Products built end to end and measured: a hotel recommender over 165,000 reviews, a property-management platform, a cited label-scepticism scanner, and a physics platformer tested by bots.">
+<meta property="og:title" content="Jude Browne">
+<meta property="og:description" content="Data, products and games, measured. Looking for a publishing-side product or analytics role in games.">
+<meta property="og:image" content="assets/whip-drop.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2320192f'/%3E%3Ccircle cx='24' cy='26' r='10' fill='%23ece6f0'/%3E%3Cpath d='M30 34 Q44 40 50 22' stroke='%23e8835a' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #15121f;
+    --bg-2: #1d1829;
+    --card: #231d33;
+    --line: #342c48;
+    --text: #ece6f0;
+    --muted: #aaa1b8;
+    --accent: #e8835a;
+    --accent-2: #f2b27e;
+    --lilac: #c9b6f2;
+    --max: 1040px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+  }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(21,18,31,.85); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  .brand { font-weight: 700; letter-spacing: .02em; color: var(--text); }
+  nav a { color: var(--muted); margin-left: 22px; font-size: 15px; }
+  nav a:hover { color: var(--text); text-decoration: none; }
+
+  .hero {
+    padding: 72px 0 56px;
+    background:
+      radial-gradient(900px 420px at 20% 0%, rgba(232,131,90,.16), transparent 60%),
+      radial-gradient(700px 380px at 90% 10%, rgba(201,182,242,.12), transparent 60%),
+      linear-gradient(180deg, #16132a 0%, var(--bg) 100%);
+  }
+  .hero h1 { font-size: clamp(38px, 6vw, 60px); margin: 0 0 10px; line-height: 1.05; letter-spacing: -.01em; }
+  .hero .lead { font-size: clamp(18px, 2.2vw, 21px); max-width: 760px; color: var(--text); margin: 0 0 18px; }
+  .hero .aim { max-width: 760px; color: var(--muted); margin: 0 0 26px; }
+  .hero .aim strong { color: var(--accent-2); font-weight: 600; }
+  .cta a {
+    display: inline-block; margin: 0 10px 10px 0; padding: 10px 16px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--card); color: var(--text); font-size: 15px;
+  }
+  .cta a.primary { background: var(--accent); border-color: var(--accent); color: #1b120d; font-weight: 600; }
+  .cta a:hover { text-decoration: none; border-color: var(--accent-2); }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-2); margin: 0 0 22px; }
+  .intro { max-width: 760px; color: var(--muted); margin: -6px 0 26px; }
+
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+  .card h3 { margin: 0 0 8px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .card p + p { margin-top: 8px; }
+
+  .project { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: start; margin-bottom: 44px; }
+  .project.flip { grid-template-columns: 1fr 1.15fr; }
+  .project.flip .media { order: 2; }
+  .project h3 { font-size: 28px; margin: 0 0 4px; line-height: 1.15; }
+  .project .kicker { color: var(--accent-2); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; }
+  .project .tag { display: inline-block; font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; margin: 0 6px 8px 0; }
+  .project ul { padding-left: 18px; margin: 12px 0; color: var(--text); }
+  .project li { margin: 7px 0; }
+  .project li b { color: var(--accent-2); font-weight: 600; }
+  .project .links a { margin-right: 16px; font-size: 15px; }
+  .media img { border-radius: 12px; border: 1px solid var(--line); background: var(--bg-2); }
+  .stills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
+  .stills figure { margin: 0; }
+  .stills figcaption { font-size: 12.5px; color: var(--muted); margin-top: 5px; }
+  .phones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .phones img { border-radius: 14px; }
+  .note { font-size: 14px; color: var(--muted); margin-top: 10px; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .mini h3 { font-size: 18px; margin: 0 0 6px; }
+  .mini .meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+  .mini p { color: var(--text); font-size: 15.5px; margin: 0; }
+  .mini a.repo { display: inline-block; margin-top: 10px; font-size: 14px; }
+
+  .xp h3 { margin: 0; font-size: 20px; }
+  .xp .meta { color: var(--muted); margin: 2px 0 12px; }
+  .xp ul { padding-left: 18px; margin: 0; }
+  .xp li { margin: 6px 0; }
+  .edu dl { margin: 0; }
+  .edu dt { color: var(--accent-2); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin-top: 14px; }
+  .edu dd { margin: 4px 0 0; }
+
+  .skills { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .skills h4 { margin: 0 0 6px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-2); }
+  .skills p { margin: 0; color: var(--text); font-size: 15px; }
+
+  footer { padding: 48px 0 56px; border-top: 1px solid var(--line); color: var(--muted); }
+  footer a { color: var(--text); }
+  footer .row { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-bottom: 14px; }
+
+  @media (max-width: 860px) {
+    .cols, .skills { grid-template-columns: 1fr 1fr; }
+    .project, .project.flip { grid-template-columns: 1fr; }
+    .project.flip .media { order: 0; }
+    .grid2 { grid-template-columns: 1fr; }
+    .stills { grid-template-columns: 1fr 1fr; }
+    nav a { margin-left: 14px; }
+  }
+  @media (max-width: 520px) {
+    .cols, .skills { grid-template-columns: 1fr; }
+    nav { display: none; }
+    body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Jude Browne</a>
+    <nav>
+      <a href="#work">How I work</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Jude Browne</h1>
+      <p class="lead">Data Science &amp; AI graduate (UCD, 2026), Dublin. I build products end to end and then measure whether they work: a hotel recommender over 165,000 reviews, a property-management platform that replaced a spreadsheet, a label-scepticism scanner with 23 cited rules, and a physics platformer where every design decision was tested by bots before a person played it.</p>
+      <p class="aim">Looking for a publishing-side <strong>product or analytics role in games</strong>: live-service KPIs, player insight, and the cross-functional work between studios, marketing and analytics. 2K Dublin first.</p>
+      <div class="cta">
+        <a class="primary" href="mailto:jude.browne@ucdconnect.ie">Email me</a>
+        <a href="https://www.linkedin.com/in/jude-browne-098449410" rel="me">LinkedIn</a>
+        <a href="https://github.com/MrPopo32" rel="me">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>How I work</h2>
+      <p class="intro">Publishing teams ask for analytical, technical and commercial skills and do not expect a graduate to arrive with all three. Here is where I stand on each, with the evidence.</p>
+      <div class="cols">
+        <div class="card">
+          <h3>Analytical</h3>
+          <p>Four ranking strategies compared on five evaluation dimensions for the hotel recommender, with the honest finding that the simplest ranker led on the relevance proxy.</p>
+          <p>Management reporting on occupancy, upcoming expiries, maintenance cost and compliance KPIs, consolidating what had been spread across spreadsheets, email and WhatsApp.</p>
+        </div>
+        <div class="card">
+          <h3>Technical</h3>
+          <p>Python, SQL, pandas, scikit-learn, FastAPI; Godot and GDScript; Git. SQL-to-parquet pipelines, LLM-derived features, offline evaluation.</p>
+          <p>A hand-written physics simulation that replays bit for bit, guarded by a golden hash and seven recorded input tapes, so a change that moves behaviour by one bit fails a test.</p>
+        </div>
+        <div class="card">
+          <h3>Commercial and product</h3>
+          <p>Requirements gathered directly from a portfolio manager and validated module by module against day-to-day operations.</p>
+          <p>A market survey (Yuka's 85 million users and its three French lawsuits) that set Product Lens's posture: sourced, measured flags only, and never a verdict on a named product.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <div class="media">
+          <img src="assets/whip-demo.gif" alt="THE WHIP: the player throws a whip at a branch, steps off the ledge, swings, lets go and lands on the next shelf" width="420" height="190" loading="lazy">
+          <div class="stills">
+            <figure><img src="assets/whip-throw.jpg" alt="The whip in the air, thrown at the branch" loading="lazy"><figcaption>Throw</figcaption></figure>
+            <figure><img src="assets/whip-drop.jpg" alt="The whip locked on the branch, the body stepping off the ledge" loading="lazy"><figcaption>Lock, step off</figcaption></figure>
+            <figure><img src="assets/whip-flight.jpg" alt="The body released on the way up, flying toward the shelf" loading="lazy"><figcaption>Let go, fly</figcaption></figure>
+            <figure><img src="assets/whip-pull.jpg" alt="Pulling down the rope under the branch to gain height" loading="lazy"><figcaption>Pull for height</figcaption></figure>
+          </div>
+        </div>
+        <div>
+          <p class="kicker">Game, 2026, solo</p>
+          <h3>THE WHIP</h3>
+          <span class="tag">Godot 4.7</span><span class="tag">GDScript</span><span class="tag">Python</span><span class="tag">simulation</span><span class="tag">playtest bots</span>
+          <p>A 2D physics platformer where a simulated whip is your only tool and your only way to move. Throw it at a branch, hold, step off the edge, and the drop is your swing; let go on the way up and fly.</p>
+          <ul>
+            <li><b>The whip is the physics.</b> A hand-written chain of 26 particles at 60 Hz with 16 substeps, no engine physics and no random numbers, so every run is replayable bit for bit.</li>
+            <li><b>Playtesting as measurement.</b> Bots throw every stroke of a 36-stroke grid from every ledge. A level ships only when at least three strokes land with a release window a person can hit. The demo's climbing stages failed that bar with the branch 1.0 m up and passed at 1.25 m, so that is where the branch is.</li>
+            <li><b>Feel decisions were prototyped, not argued.</b> Three control schemes and nine feel options were built as switchable modes and measured side by side. The losers stayed in the record, including a jump that measured as making the swing worse.</li>
+            <li><b>The demo run is a regression test.</b> The GIF is a replay of a recorded run through the real input path; if the simulation moves by a bit, the run stops landing and the test fails.</li>
+          </ul>
+          <p class="links"><a href="https://github.com/MrPopo32/Whip">Code and design record on GitHub</a></p>
+        </div>
+      </article>
+
+      <article class="project flip">
+        <div class="media">
+          <div class="phones">
+            <img src="assets/lens-verdict.png" alt="Product Lens verdict screen for a jar of organic honey with two flags" loading="lazy">
+            <img src="assets/lens-source.png" alt="A flag opened: the reasoning, a verbatim quote from the EU Directive and a link to it" loading="lazy">
+            <img src="assets/lens-detail.png" alt="Full label detail including the text read from the pack photos" loading="lazy">
+          </div>
+          <p class="note">Rowse honey is the demo because it is a good product with an honest label that happens to illustrate a legal change, not because anything is wrong with it.</p>
+        </div>
+        <div>
+          <p class="kicker">Consumer web app, 2026, solo</p>
+          <h3>Product Lens</h3>
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Open Food Facts</span><span class="tag">rules in YAML</span><span class="tag">50 tests</span>
+          <p>Scan a food barcode and get told what on the label deserves scepticism, with the regulation, report or guidance note that says so. Not a nutrition score: the gap between what a label implies and what it legally guarantees.</p>
+          <ul>
+            <li><b>The rules are the product.</b> 23 of them in one readable file: unregulated terms such as "all natural", the six colours that must carry a hyperactivity warning, olive-oil grade checks, honey origin wording. Every rule carries a verbatim quote and a link to its source, and the loader refuses to start on a rule it cannot defend.</li>
+            <li><b>Posture decided by the market and the case law.</b> Yuka won on appeal where its flags were sourced and measured and lost outright where it generalised without evidence. So the app never says a product is bad: it says what a word means, what a category has been found to contain, or what is missing.</li>
+            <li><b>AI reads, people judge.</b> A model may transcribe a pack photo or propose a quote from a document; a human promotes every rule. Known barcodes cost nothing to look up.</li>
+            <li><b>Honest about coverage.</b> Built on crowd-sourced data, thin on Irish own-brand shelves, and an unknown barcode says so and offers a link to add it.</li>
+          </ul>
+          <p class="links"><a href="https://github.com/MrPopo32/product-lens">Code and rules on GitHub</a></p>
+        </div>
+      </article>
+
+      <div class="grid2">
+        <div class="card mini">
+          <h3>Review-aware hotel recommender</h3>
+          <div class="meta">Final-year project, UCD, 2026 &middot; Python, SQL/MySQL, pandas, parquet, OpenAI API</div>
+          <p>An item-to-item recommender over roughly 2,370 hotels and 165,000+ TripAdvisor reviews. Reviews converted from MySQL to parquet and enriched with aspect-level sentiment features; four rankers (sentiment similarity, amenity overlap, contextual popularity, weighted hybrid) evaluated offline across relevance, coverage, city match, sentiment alignment and rating. Frequency-based ranking led on the relevance proxy; the sentiment-enhanced ranker returned higher-rated hotels with closer review-aspect alignment.</p>
+          <a class="repo" href="https://github.com/MrPopo32/hotel-fyp">github.com/MrPopo32/hotel-fyp</a>
+        </div>
+        <div class="card mini">
+          <h3>Property management platform</h3>
+          <div class="meta">Icon Properties, Cape Town &middot; placement, January to April 2025 &middot; web app, data modelling, dashboards</div>
+          <p>Replaced an Excel-driven workflow with one platform for properties, tenants, leases, maintenance and compliance. Maintenance tracked from report to completion with contractor, quotation, cost and status; per-property dashboards with a full digital history; automated lease and notice tracking with advance alerts; management reporting on occupancy, expiries, costs and compliance KPIs. Requirements came straight from the portfolio manager and each module was validated against daily operations.</p>
+        </div>
+        <div class="card mini">
+          <h3>Arcade shooter</h3>
+          <div class="meta">Java, Swing &middot; course project</div>
+          <p>A 2D arcade shooter with three escalating rounds, melee and ranged enemies, health pickups, a temporary spread-shot, and a HUD for score, round and health.</p>
+          <a class="repo" href="https://github.com/MrPopo32/gamedevelopment">github.com/MrPopo32/gamedevelopment</a>
+        </div>
+        <div class="card mini">
+          <h3>Collaborative-filtering recommender</h3>
+          <div class="meta">Plain Java, no libraries &middot; coursework</div>
+          <p>User-based nearest-neighbour filtering and matrix factorisation with bias terms, with the evaluation tooling to compare them.</p>
+          <a class="repo" href="https://github.com/MrPopo32/cf-recommender">github.com/MrPopo32/cf-recommender</a>
+        </div>
+        <div class="card mini">
+          <h3>European football performance analysis</h3>
+          <div class="meta">Jupyter, pandas &middot; team project with two collaborators</div>
+          <p>Which team and individual factors move performance, and in which direction, from European football data.</p>
+          <a class="repo" href="https://github.com/MrPopo32/football_analysis">github.com/MrPopo32/football_analysis</a>
+        </div>
+        <div class="card mini">
+          <h3>Web-scraped movie data analysis</h3>
+          <div class="meta">Python, pandas, regex, matplotlib &middot; course project</div>
+          <p>Titles and details scraped from structured HTML into DataFrames, irregular text cleaned with regex, incomplete records filtered, and the findings written for a non-technical reader in a reproducible two-notebook workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience and education</h2>
+      <div class="grid2">
+        <div class="card xp">
+          <h3>Icon Properties</h3>
+          <div class="meta">Placement Intern, Property Management Systems &middot; Cape Town, South Africa &middot; January to April 2025</div>
+          <ul>
+            <li>Developed a web-based property management system to replace the company's Excel-based workflow, translating the existing structure for properties, tenants, leases, maintenance and compliance into one centralised platform tailored to how the business operates.</li>
+            <li>Built a maintenance-tracking module covering issues from report to completion, with contractor, quotation, cost and status fields.</li>
+            <li>Designed per-property dashboards showing occupancy, tenant and lease details, open maintenance, inspections, compliance requirements and linked documents, backed by a full digital history.</li>
+            <li>Implemented automated lease and tenant tracking with advance alerts for commencement, expiry, notice periods and renewals.</li>
+            <li>Delivered management reporting on occupancy, upcoming expiries, maintenance costs and compliance KPIs.</li>
+            <li>Gathered requirements directly from the portfolio manager and validated each module against day-to-day operations.</li>
+          </ul>
+        </div>
+        <div class="card edu">
+          <h3>University College Dublin</h3>
+          <dl>
+            <dt>Degree</dt>
+            <dd>BSc Data Science &amp; AI, 2022 to 2026. Second Class Honours, GPA 3.2.</dd>
+            <dt>Strongest modules</dt>
+            <dd>Information Visualisation (A-), Probability (A-), Data Science in Practice (B+), Information Security (B+).</dd>
+            <dt>Relevant coursework</dt>
+            <dd>Artificial Intelligence, Data Science in Python, Programming for Big Data, Cloud Computing, Multi-Agent Systems, Information Theory and Optimisation.</dd>
+            <dt>Interests</dt>
+            <dd>AI systems, recommender systems, data-driven products, tennis, fitness, long-form writing.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h4>Analysis</h4><p>Python, SQL/MySQL, pandas, NumPy, Excel, EDA, cleaning, KPI evaluation</p></div>
+        <div><h4>Visualisation</h4><p>matplotlib, dashboards, chart selection, data storytelling</p></div>
+        <div><h4>ML and ranking</h4><p>scikit-learn, feature engineering, similarity scoring, recommender systems, offline evaluation</p></div>
+        <div><h4>Data workflow</h4><p>SQL-to-parquet pipelines, data modelling, data-quality checks, Jupyter, Git/GitHub</p></div>
+        <div><h4>Product</h4><p>Requirements gathering, stakeholder communication, documentation, explaining model trade-offs; Godot/GDScript for prototypes</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="row">
+      <a href="mailto:jude.browne@ucdconnect.ie">jude.browne@ucdconnect.ie</a>
+      <a href="https://www.linkedin.com/in/jude-browne-098449410">linkedin.com/in/jude-browne-098449410</a>
+      <a href="https://github.com/MrPopo32">github.com/MrPopo32</a>
+    </div>
+    <div>Dublin, Ireland. This page is a static site on GitHub Pages; the game footage is a replay of a recorded run, not an animation.</div>
+  </div>
+</footer>
+
+</body>
+</html>
